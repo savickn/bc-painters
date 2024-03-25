@@ -1,7 +1,4 @@
-<<<<<<< HEAD
 # bc-painters
-=======
-# AutoShop
 
 ## Cloud Deployment
 
