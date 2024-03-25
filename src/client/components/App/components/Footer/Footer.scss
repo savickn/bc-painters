@@ -1,0 +1,33 @@
+.footer-container {
+    background-color: #2B2929;
+    display: flex;
+    flex-flow: column nowrap;
+    height: 100%;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+}
+
+.footer-category {
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    color: rgb(222, 222, 222);
+    padding: 2rem 2rem 0 2rem;
+}
+
+.footer-category * {
+    color: rgb(222, 222, 222);
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+    text-align: center;
+}
+
+.footer-copyright {
+    color: gray;
+    font-size: small;
+}

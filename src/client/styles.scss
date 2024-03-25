@@ -1,0 +1,430 @@
+
+
+@import './components/App/components/Header/Header.scss';
+
+/* UNIVERSAL STYLES */ 
+
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+
+.foreground {
+  background-color: #ffffff;
+}
+
+.background {
+  background-color: lighten(lightgray, 14%);
+}
+
+
+/* Typography */
+
+* {
+  font-size: 16pt;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/*input,
+input::placeholder {
+    font: 20px/3 sans-serif;
+}*/
+
+.header {
+  min-height: 10vh;
+  max-height: 10vh;
+}
+
+.container {
+  min-height: 80vh;
+  max-width: 70vw;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+@media (max-width: 800px) {
+  .container {
+    min-height: 80vh;
+    padding: 15px;
+    margin: 0 auto;
+  }
+}
+
+
+
+.footer {
+  min-height: 10vh;
+  max-height: 10vh;
+  text-align: center;
+  padding: 10px;
+}
+
+.redText {
+  color: red;
+}
+
+.greenText {
+  color: green;
+}
+
+.whiteText {
+  color: white;
+}
+
+.center {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.click-cursor {
+  cursor: pointer;
+}
+
+.hide-element {
+  display: none;
+}
+
+/* used to escape <div> from Bootstrap container, NOT VERY EFFECTIVE */
+.full-width {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+}
+
+/* used to create a <a> without default styling */
+.unstyled-link {
+  color: black;
+  text-decoration: none;
+
+  &:hover {
+    color: black;
+    text-decoration: none;
+    box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    transition: all 0.3s ease 0s;
+    border-radius: 1rem;
+  }
+}
+
+// used to make text look like hyperlink
+.simple-link {
+  color: #3366CC;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// used to create button-like styles for other elements (e.g. span)
+.minimal-btn {
+  font-size: 14pt;
+  border: lightgray solid 2px;
+  border-radius: 3px;
+  cursor: pointer;
+  padding: 5px 12px 5px 12px;
+  text-decoration: none;
+
+  &.unselected {
+    background-color: white;
+  }
+
+  &.selected {
+    background-color: lighten(lightgray, 10%);
+    font-weight: bold;
+  }
+
+  &:hover {
+    background-color: lighten(lightgray, 10%);
+  }
+}
+
+.vert-resize-only {
+  resize: vertical;
+}
+
+// used to add link-like styling to regular text (e.g. similar font but has hover effect/etc)
+.action-text {
+
+  &:hover {
+    cursor: pointer;
+    font-weight: 550;
+  }
+}
+
+// span with some padding to the left
+span.left-padded {
+  padding-left: 5px;
+} 
+
+// span that is positioned as far right as possible
+span.pull-right {
+
+} 
+
+.left-margin {
+  margin-left: 5px;
+}
+
+/* used to create a large Button that looks like an image */
+.addIcon {
+  display: inline-block;
+
+  width: 105px;
+  height: 130px;
+
+  border-radius: 5px;
+
+  &:first-child {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &:hover {
+    box-shadow: 2px 6px #888888;
+  }
+}
+
+// used to make <img>'s round 
+.img-round {
+  border-radius: 50%;
+}
+
+
+
+.false-link {
+  cursor: pointer;
+  color: #007185;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.element-link {
+  color: black;
+
+  &:hover {
+    color: black;
+    text-decoration: none;
+
+    border: 3px dotted #ff7a59;
+  }
+}
+
+
+
+
+/* Header Styles */
+
+h1 {
+	margin: 1em 0 0.5em 0;
+	color: #343434;
+	font-weight: normal;
+	font-family: 'Ultra', sans-serif;   
+	font-size: 36px;
+	line-height: 42px;
+	text-transform: uppercase;
+	text-shadow: 0 2px white, 0 3px #777;
+}
+
+h2 {
+	margin: 1em 0 0.5em 0;
+	color: #343434;
+	font-weight: normal;
+	font-size: 24px;
+	line-height: 40px;
+	font-family: 'Orienta', sans-serif;
+}
+
+h3 {
+	margin: 1em 0 0.5em 0;
+	color: #343434;
+	font-size: 22px;
+	line-height: 40px;
+	font-weight: normal;
+	text-transform: uppercase;
+	font-family: 'Orienta', sans-serif;
+	letter-spacing: 1px;
+	font-style: italic;
+}
+
+h4 {
+	margin: 1em 0 0.5em 0;
+	color: #343434;
+	font-size: 18px;
+	line-height: 20px;
+	font-weight: normal;
+	font-family: 'Orienta', sans-serif;
+}
+
+
+
+/* Glyphicons within Inputs */
+
+.inner-addon {
+  position: relative; /* enable absolute positioning by changing container to 'relative' instead of 'static' */
+
+  .glyphicon {
+    position: absolute;
+    padding: 10px;
+  }
+}
+
+.left-addon {
+  .glyphicon  { left:  0px;}
+  input  { padding-left:  30px; }
+}
+
+.right-addon {
+  .glyphicon  { right:  0px;}
+  input  { padding-right:  30px; }
+}
+
+i:hover {
+  cursor: pointer;
+}
+
+
+
+/* Layouts */
+
+// ROWS
+
+.flex-sidebar-content {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+
+  .sidebar {
+    flex: 3;
+  }
+  .content {
+    flex: 7;
+  }
+}
+
+
+.flex-content-sidebar {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+
+  .content-el {
+    flex: 7;
+    background-color: #f8f8f8;
+    padding: 15px;
+  }
+
+  .sidebar-el {
+    flex: 3;
+    background-color: #f8f8f8;
+    padding: 15px;
+  }
+}
+
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.flex-row-wrap {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+// for elements on opposite sides of the container
+.flex-row-spread {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+
+// COLUMNS
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.flex-column-spread {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+// has a big gap
+.flex-column-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.flex-column-align-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+
+.flex-centered {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-centered-horizontally {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flex-between {
+  display: flex;
+  gap: 10px;
+}
+
+
+// FLEX CHILDREN
+
+.fill {
+  flex: 10;
+}
+
+
+.gap-25 {
+  gap: 25px;
+}
+
+.gap-10 {
+  gap: 10px;
+}
+
+
+
+// other 
+
+
+.padding-10 {
+  padding: 10px;
+}
+
+.hovered-link {
+  color: black;
+  text-decoration: none;
+  box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+  transition: all 0.3s ease 0s;
+}
