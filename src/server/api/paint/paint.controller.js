@@ -28,5 +28,5 @@ export const updatePaint = async (req, res) => {
 
 
 function handleError(res, err) {
-  return res.status(404).send(err);
+  return res.status(404).json({ message: err});
 };

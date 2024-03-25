@@ -107,10 +107,7 @@ export default function PaintComponent() {
       .then((res) => {
         setPaints([...paints.filter(paint => paint._id !== res.data.paint._id), res.data.paint]);
     }).catch(err => {
-        console.log(err);
-
-        // add error handling
-
+        createAlert(`An error occurred! Message: ${err.message}`, 'danger');
     })
   }
 

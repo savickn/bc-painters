@@ -42,9 +42,7 @@ export default function UserManagementView() {
           return user._id !== res.data.user._id ? user : res.data.user;
         }));
     }).catch(err => {
-        console.log(err);
-
-        // add 
+        createAlert(`An error occurred! Message: ${err.message}`, 'danger');
     })
   }
 
