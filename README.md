@@ -2,7 +2,8 @@
 
 ## Cloud Deployment
 
-Found at https://www.savickasn.com
+Found at https://www.savickasn.com.
+
 Please use one of the following accounts to interact with the app:
 
 username: 'jane@bcpainters.ca', password: '*jane123' 
